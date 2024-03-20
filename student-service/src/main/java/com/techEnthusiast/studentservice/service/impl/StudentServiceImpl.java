@@ -16,7 +16,8 @@ import org.springframework.web.client.RestTemplate;
 public class StudentServiceImpl implements StudentService {
 
     Logger logger = LoggerFactory.getLogger(StudentService.class);
-    private String baseUrl =  "http://localhost:8080/api/department/";
+//    private String baseUrl =  "http://localhost:8080/api/department/";
+    private String baseUrl =  "http://department-service:8080/api/department/";
 
     private StudentRepository studentRepository;
 
