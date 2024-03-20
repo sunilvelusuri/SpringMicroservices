@@ -1,10 +1,11 @@
 package com.techEnthusiast.studentservice;
 
+import lombok.NoArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-
+@NoArgsConstructor
 @SpringBootApplication
 public class StudentServiceApplication {
 
@@ -12,10 +13,10 @@ public class StudentServiceApplication {
 		SpringApplication.run(StudentServiceApplication.class, args);
 	}
 
-//	@Bean
-//	public RestTemplate restTemplate(){
-//		return new RestTemplate();
-//	}
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
+	}
 
 
 

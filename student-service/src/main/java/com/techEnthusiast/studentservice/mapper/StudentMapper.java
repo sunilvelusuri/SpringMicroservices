@@ -1,4 +1,4 @@
-package com.techEnthusiast.studentservice.service.mapper;
+package com.techEnthusiast.studentservice.mapper;
 
 import com.techEnthusiast.studentservice.dto.StudentDto;
 import com.techEnthusiast.studentservice.entity.Student;

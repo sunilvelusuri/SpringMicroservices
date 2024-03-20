@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.CompletableFuture;
+
 @RestController
 @RequestMapping("api/student")
 public class StudentController {
@@ -24,8 +26,8 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StudentDto> getDepartmentById(@PathVariable Long id){
-        StudentDto studentDto = studentService.getStudentById(id);
-        return ResponseEntity.ok(studentDto);
+    public CompletableFuture<String> getStudentWithDepartment(@PathVariable Long id) {
+        return CompletableFuture.supplyAsync(()->studentService.getStudentWithDepartment(id));
     }
+
 }

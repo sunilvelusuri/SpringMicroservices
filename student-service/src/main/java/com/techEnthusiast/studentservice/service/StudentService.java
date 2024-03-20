@@ -5,5 +5,5 @@ import com.techEnthusiast.studentservice.dto.StudentDto;
 public interface StudentService {
     StudentDto saveStudent(StudentDto studentDto);
 
-    StudentDto getStudentById(Long id);
+    String getStudentWithDepartment(Long id);
 }

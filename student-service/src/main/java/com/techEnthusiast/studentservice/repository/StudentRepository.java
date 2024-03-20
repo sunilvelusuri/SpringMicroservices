@@ -1,8 +1,9 @@
-package com.techEnthusiast.studentservice.service.repository;
+package com.techEnthusiast.studentservice.repository;
 
 import com.techEnthusiast.studentservice.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+@Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 }
