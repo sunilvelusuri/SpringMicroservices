@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="student-service" />
         <module name="serviceRegistry" />
         <module name="department-service" />
-        <module name="student-service" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="department-service" options="-parameters" />
       <module name="serviceRegistry" options="-parameters" />
       <module name="student-service" options="-parameters" />
