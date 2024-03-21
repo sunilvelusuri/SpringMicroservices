@@ -32,6 +32,7 @@ public class StudentController {
     @CircuitBreaker(name="studentservice", fallbackMethod="fallbackMethod")
     @Retry(name="studentservice")
     @TimeLimiter(name="studentservice")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public CompletableFuture<String> getStudentWithDepartment(@PathVariable Long id) {
         return CompletableFuture.supplyAsync(()->studentService.getStudentWithDepartment(id));
     }
