@@ -15,9 +15,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    Logger logger = LoggerFactory.getLogger(StudentService.class);
 //    private String baseUrl =  "http://localhost:8080/api/department/";
-    private String baseUrl =  "http://department-service:8080/api/department/";
+    private String baseUrl =  "http://department-service:8082/api/department/";
 
     private StudentRepository studentRepository;
 
@@ -44,10 +43,23 @@ public class StudentServiceImpl implements StudentService {
         Department department = restTemplate.getForObject(baseUrl+student.getDepartmentid(), Department.class);
         StringBuffer buffer = new StringBuffer();
         buffer.append("\n");
-        buffer.append(student.getStudentId()+" "+student.getFirstName()+" "+student.getLastName()+" "+student.getDepartmentid());
+        buffer.append("Student details");
         buffer.append("\n");
-        buffer.append(department.getDepartmentName()+"  "+department.getDepartmentCode()+"  "+department.getDepartmentAddress());
-        logger.info("Student with department details :"+buffer.toString());
+        buffer.append("Student id : " + student.getStudentId());
+        buffer.append("\n");
+        buffer.append("Student name : "+ student.getFirstName() +" "+ student.getLastName());
+        buffer.append("\n");
+        buffer.append("Department id : "+student.getDepartmentid());
+        buffer.append("\n");
+        buffer.append("\n");
+        buffer.append("Department details");
+        buffer.append("\n");
+        buffer.append("Department Name : "+department.getDepartmentName());
+        buffer.append("\n");
+        buffer.append("Department Code : "+department.getDepartmentCode());
+        buffer.append("\n");
+        buffer.append("Departement Block : "+department.getDepartmentAddress());
+        System.out.println(buffer.toString());
         return buffer.toString();
     }
 }
